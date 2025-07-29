@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenneth Frazier: A Legacy of Purpose-Driven Leadership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+            color: #102A43;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-value {
+            font-weight: 800;
+            color: #003F5C;
+        }
+        .flowchart-node {
+            border: 2px solid #374C80;
+            background-color: #ffffff;
+            color: #003F5C;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease;
+        }
+        .flowchart-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 4rem;
+            color: #7A5195;
+        }
+        .flowchart-connector::after {
+            content: '▼';
+            font-size: 1.5rem;
+        }
+        .section-title {
+            color: #003F5C;
+            font-weight: 800;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold section-title">Kenneth Frazier: A Profile</h1>
+            <div class="hidden md:flex space-x-6">
+                <a href="#career" class="text-gray-600 hover:text-[#003F5C] transition">Journey</a>
+                <a href="#impact" class="text-gray-600 hover:text-[#003F5C] transition">Impact</a>
+                <a href="#leadership" class="text-gray-600 hover:text-[#003F5C] transition">Principles</a>
+                <a href="#recognition" class="text-gray-600 hover:text-[#003F5C] transition">Accolades</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="hero" class="text-center py-16">
+            <h2 class="text-4xl md:text-6xl font-extrabold section-title mb-4">Kenneth Frazier: A Legacy of Purpose-Driven Leadership</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">A visionary leader who steered Merck through unprecedented challenges, championing innovation, ethics, and social justice.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="card bg-gradient-to-r from-[#003F5C] to-[#374C80] text-white text-center">
+                    <p class="text-2xl font-bold">Years as Merck CEO</p>
+                    <p class="text-5xl font-extrabold tracking-tight mt-2">10</p>
+                </div>
+                <div class="card bg-gradient-to-r from-[#374C80] to-[#7A5195] text-white text-center">
+                    <p class="text-2xl font-bold">Keytruda Approval (Year)</p>
+                    <p class="text-5xl font-extrabold tracking-tight mt-2">2014</p>
+                </div>
+                <div class="card bg-gradient-to-r from-[#7A5195] to-[#BC5090] text-white text-center">
+                    <p class="text-2xl font-bold">"Purpose-Driven" Leadership</p>
+                    <p class="text-5xl font-extrabold tracking-tight mt-2">✓</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="career" class="py-16">
+            <h3 class="section-title text-3xl font-bold text-center mb-12">Journey Through Merck: From Counsel to CEO</h3>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Kenneth Frazier's ascent at Merck demonstrates a career built on strategic legal acumen, unwavering ethics, and a deep understanding of the pharmaceutical landscape.</p>
+            
+            <div class="flex flex-col items-center">
+                <div class="flowchart-node w-full md:w-1/2">
+                    <p class="font-bold text-lg">Early Legal Career</p>
+                    <p class="text-sm">Attorney at Drinker Biddle & Reath, specializing in corporate law and litigation.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-node w-full md:w-1/2">
+                    <p class="font-bold text-lg">Joined Merck (1992)</p>
+                    <p class="text-sm">Began as General Counsel for Public Affairs and then General Counsel.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-node w-full md:w-1/2">
+                    <p class="font-bold text-lg">Senior Leadership Roles</p>
+                    <p class="text-sm">Became Executive Vice President & General Counsel, then President of Global Human Health.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-node w-full md:w-1/2">
+                    <p class="font-bold text-lg">CEO of Merck (2011-2021)</p>
+                    <p class="text-sm">Led the company through patent cliffs, Vioxx litigation, and groundbreaking innovation.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-node w-full md:w-1/2">
+                    <p class="font-bold text-lg">Executive Chairman (2021-2022)</p>
+                    <p class="text-sm">Transitioned leadership while continuing to guide strategic direction.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-node w-full md:w-1/2">
+                    <p class="font-bold text-lg">Retired from Merck (2022)</p>
+                    <p class="text-sm">Continued board service and advocacy for social good.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-16 bg-white rounded-xl shadow-lg">
+            <h3 class="section-title text-3xl font-bold text-center mb-4">Driving Innovation & Overcoming Challenges</h3>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Under Frazier's leadership, Merck navigated significant hurdles while delivering transformative scientific breakthroughs, most notably with Keytruda.</p>
+            <div class="chart-container">
+                <canvas id="merckRAndDChart"></canvas>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-4">This chart illustrates Merck's robust investment in research and development under Kenneth Frazier's leadership, highlighting a consistent commitment to innovation as a core driver of value and patient impact, even amidst financial and legal pressures.</p>
+        </section>
+
+        <section id="leadership" class="py-16">
+            <h3 class="section-title text-3xl font-bold text-center mb-12">Principles of Purpose-Driven Leadership</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h4 class="text-2xl font-bold text-[#003F5C] mb-4">Ethical Compass & Social Justice</h4>
+                    <p class="text-gray-600 mb-6">Frazier's leadership is defined by an unwavering commitment to ethics, even when it means challenging established norms or powerful figures.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><span class="text-[#FF764A] mr-3 text-xl font-bold">✓</span><span><span class="font-semibold">Charlottesville Stance:</span> Resigned from President Trump's manufacturing council, stating "America's leaders must clearly reject hatred."</span></li>
+                        <li class="flex items-start"><span class="text-[#FF764A] mr-3 text-xl font-bold">✓</span><span><span class="font-semibold">Access to Medicine:</span> Advocated for global access to essential medicines, particularly for diseases affecting developing nations.</span></li>
+                        <li class="flex items-start"><span class="text-[#FF764A] mr-3 text-xl font-bold">✓</span><span><span class="font-semibold">Corporate Responsibility:</span> Emphasized that corporations have a moral obligation to contribute to society, not just shareholders.</span></li>
+                    </ul>
+                </div>
+                <div class="card">
+                     <h4 class="text-2xl font-bold text-[#003F5C] mb-4">Diversity & Inclusion Advocacy</h4>
+                    <p class="text-gray-600 mb-6">A strong proponent of fostering diverse and inclusive workplaces, seeing it as both an ethical imperative and a business advantage.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><span class="text-2xl mr-4">🤝</span><div><p class="font-bold">Equity in Leadership</p><p class="text-gray-500 text-sm">Actively promoted diverse representation at all levels, from executive leadership to the broader workforce.</p></div></li>
+                        <li class="flex items-center"><span class="text-2xl mr-4">💡</span><div><p class="font-bold">Innovation Through Diversity</p><p class="text-gray-500 text-sm">Believes diverse perspectives lead to better problem-solving and scientific breakthroughs.</p></div></li>
+                        <li class="flex items-center"><span class="text-2xl mr-4">🌱</span><div><p class="font-bold">Inclusive Culture</p><p class="text-gray-500 text-sm">Strove to create environments where all employees feel valued, respected, and empowered to contribute fully.</p></div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="recognition" class="py-16">
+            <h3 class="section-title text-3xl font-bold text-center mb-12">Distinguished Accolades & Global Influence</h3>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Frazier's impact is widely recognized through prestigious awards and his influential roles on numerous global boards and commissions.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card text-center">
+                    <p class="text-4xl mb-3">🏅</p>
+                    <h4 class="font-bold text-lg text-[#003F5C]">Carnegie Medal of Philanthropy</h4>
+                    <p class="text-sm text-gray-500 mt-1">Recognized for his work on social justice and access to healthcare.</p>
+                </div>
+                <div class="card text-center">
+                    <p class="text-4xl mb-3">💡</p>
+                    <h4 class="font-bold text-lg text-[#7A5195]">Forbes "Game Changer"</h4>
+                    <p class="text-sm text-gray-500 mt-1">Celebrated for his transformative leadership in the pharmaceutical industry.</p>
+                </div>
+                <div class="card text-center">
+                    <p class="text-4xl mb-3">👑</p>
+                    <h4 class="font-bold text-lg text-[#BC5090]">TIME 100 Most Influential People</h4>
+                    <p class="text-sm text-gray-500 mt-1">Included for his leadership and social commentary.</p>
+                </div>
+                <div class="card text-center">
+                    <p class="text-4xl mb-3">🕊️</p>
+                    <h4 class="font-bold text-lg text-[#EF5675]">NAACP Legal Defense Fund Award</h4>
+                    <p class="text-sm text-gray-500 mt-1">Honored for his commitment to civil rights and justice.</p>
+                </div>
+            </div>
+            <div class="chart-container mt-12">
+                <canvas id="boardServiceChart"></canvas>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-4">This chart illustrates the breadth of Kenneth Frazier's influence through his various high-profile board and committee service roles, showcasing his continued engagement in shaping global policy and corporate governance beyond his Merck tenure.</p>
+        </section>
+
+        <section id="future-legacy" class="py-16 bg-white rounded-xl shadow-lg">
+            <h3 class="section-title text-3xl font-bold text-center mb-4">Shaping Tomorrow: Beyond Merck</h3>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Even after retiring as CEO, Kenneth Frazier continues to influence global health, business, and social policy through strategic roles and advocacy.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                     <h4 class="text-2xl font-bold text-[#003F5C] mb-4">Co-Chair, OneTen Coalition</h4>
+                     <p class="text-gray-700 mb-6">Frazier co-chairs OneTen, an organization dedicated to upskilling, hiring, and promoting one million Black Americans into family-sustaining jobs over the next 10 years, fostering economic opportunity and addressing systemic inequality.</p>
+                     <div class="tag bg-[#BC5090]/10 text-[#BC5090]">Social Impact</div>
+                     <div class="tag bg-[#EF5675]/10 text-[#EF5675]">Economic Equity</div>
+                </div>
+                <div class="text-center md:text-left">
+                     <h4 class="text-2xl font-bold text-[#003F5C] mb-4">Board & Advisory Roles</h4>
+                     <p class="text-gray-700 mb-6">He continues to serve on numerous influential boards including Cornerstone Building Brands, the National Football League, Weill Cornell Medicine, and the American Academy of Arts and Sciences, extending his impact across diverse sectors.</p>
+                     <div class="tag bg-[#7A5195]/10 text-[#7A5195]">Corporate Governance</div>
+                     <div class="tag bg-[#003F5C]/10 text-[#003F5C]">Healthcare Advocacy</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#003F5C] text-white mt-16">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="font-bold text-lg">Kenneth Frazier: A Leader for the Ages</p>
+            <p class="text-sm opacity-80 mt-2">This infographic showcases the extraordinary career of Kenneth Frazier, a leader defined by his integrity, innovation, and unwavering commitment to making a positive difference in the world.<br>Generated by Canvas Infographics.</p>
+        </div>
+    </footer>
+
+    <script>
+        const brilliantBluesPalette = {
+            darkBlue: '#003F5C',
+            midBlue: '#374C80',
+            purple: '#7A5195',
+            magenta: '#BC5090',
+            pink: '#EF5675',
+            orange: '#FF764A',
+            yellow: '#FFA600'
+        };
+        
+        const chartColors = [
+            brilliantBluesPalette.purple,
+            brilliantBluesPalette.magenta,
+            brilliantBluesPalette.pink,
+            brilliantBluesPalette.orange,
+            brilliantBluesPalette.yellow
+        ];
+
+        function wrapLabel(label, maxWidth = 16) {
+            if (typeof label !== 'string' || label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const mandatoryTooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            if (!item) return '';
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        color: '#102A43',
+                        font: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                }
+            }
+        };
+
+        function createMerckRAndDChart() {
+            const ctx = document.getElementById('merckRAndDChart').getContext('2d');
+            const labels = [
+                '2011 (Pre-CEO)', 
+                '2013 (Early CEO)', 
+                '2015 (Keytruda Impact)', 
+                '2018 (Mid-CEO)', 
+                '2020 (Pandemic/Late CEO)'
+            ];
+            const rAndDSpending = [8.5, 9.4, 6.7, 10.1, 13.6]; // Example data in billions USD
+            const keytrudaApprovalYearIndex = labels.indexOf('2015 (Keytruda Impact)');
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels.map(l => wrapLabel(l)),
+                    datasets: [{
+                        label: 'R&D Spending (Billions USD)',
+                        data: rAndDSpending,
+                        borderColor: brilliantBluesPalette.magenta,
+                        backgroundColor: brilliantBluesPalette.magenta + '33',
+                        fill: true,
+                        tension: 0.3,
+                        pointBackgroundColor: brilliantBluesPalette.magenta,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: brilliantBluesPalette.magenta
+                    }]
+                },
+                options: {
+                    ...mandatoryTooltipConfig,
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Year',
+                                color: '#102A43',
+                                font: { size: 14 }
+                            },
+                            ticks: { color: '#102A43' }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'R&D Spending (USD Billions)',
+                                color: '#102A43',
+                                font: { size: 14 }
+                            },
+                            ticks: { color: '#102A43' }
+                        }
+                    },
+                    plugins: {
+                        ...mandatoryTooltipConfig.plugins,
+                        annotation: {
+                            annotations: {
+                                keytrudaLine: {
+                                    type: 'line',
+                                    xMin: keytrudaApprovalYearIndex,
+                                    xMax: keytrudaApprovalYearIndex,
+                                    borderColor: brilliantBluesPalette.darkBlue,
+                                    borderWidth: 2,
+                                    borderDash: [6, 6],
+                                    label: {
+                                        display: true,
+                                        content: 'Keytruda Approved',
+                                        position: 'start',
+                                        backgroundColor: brilliantBluesPalette.darkBlue,
+                                        color: '#fff',
+                                        font: { size: 12 }
+                                    }
+                                }
+                            }
+                        },
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+        }
+
+        function createBoardServiceChart() {
+            const ctx = document.getElementById('boardServiceChart').getContext('2d');
+            const labels = [
+                'Merck & Co. Inc. (CEO/Chairman)',
+                'BlackRock',
+                'National Football League (NFL)',
+                'Cornerstone Building Brands',
+                'Weill Cornell Medicine',
+                'American Academy of Arts & Sciences'
+            ];
+            const yearsOfService = [11, 4, 3, 2, 8, 5]; // Fictional/approximate years of service for illustration
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels.map(l => wrapLabel(l)),
+                    datasets: [{
+                        label: 'Years of Service (approx.)',
+                        data: yearsOfService,
+                        backgroundColor: chartColors,
+                        borderColor: chartColors.map(c => c + 'FF'),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...mandatoryTooltipConfig,
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Years',
+                                color: '#102A43',
+                                font: { size: 14 }
+                            },
+                            ticks: { color: '#102A43' }
+                        },
+                        y: {
+                            ticks: { color: '#102A43' }
+                        }
+                    },
+                    plugins: {
+                        ...mandatoryTooltipConfig.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createMerckRAndDChart();
+            createBoardServiceChart();
+        });
+
+    </script>
+</body>
+</html>
